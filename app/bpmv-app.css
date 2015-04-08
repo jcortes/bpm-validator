@@ -1,0 +1,77 @@
+.bpmv-view {
+    margin-bottom: 2em;
+}
+
+header.container {
+    margin-bottom: 1em;
+}
+
+.container {
+    width: 80%;
+}
+
+.nav-tabs > li, 
+.nav-pills > li {
+    float:none;
+    display:inline-block;
+}
+
+table {
+    width: 100%;
+}
+
+thead, tbody, tr, td, th { 
+    display: block; 
+}
+
+tr:after {
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+thead th {
+    height: 30px;
+}
+
+tbody {
+    height: 25em;
+    overflow-y: auto;
+}
+
+tbody td, thead th {
+    width: 16.65%;
+    float: left;
+}
+
+.flag, .map {
+    width: 10em;
+    height: 7em;
+}
+
+.bpmv-body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    position: relative;
+}
+
+.loading {
+	position:relative;
+	height:100%;
+}
+
+.loading:before {
+	position:absolute;
+	content:"";
+	left:0;
+	bottom:0;
+	right:0;
+	top:0;
+	z-index:1000;
+	background:rgba(255,255,255,0.9) no-repeat center center;
+	background-image: url('img/loading-animation.gif');
+}
+
+.top-buffer { margin-top: 1em; }

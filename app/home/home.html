@@ -1,0 +1,48 @@
+<div class="col-md-8 col-md-offset-2 text-justify">
+    <p>Esta herramienta te permite validar errores de una archivo BPM con extension .xpdl y corregirlos</p>
+    
+    <p><strong>Funcionalidad: </strong>
+        Informa al usuario qué elementos del BPM presentan errores segun las reglas del BPMN
+    </p>
+    
+    <p><strong>Estas son las validaciones a realizar:</strong></p>
+    <ul>
+        <li>
+            <strong>BPMN 0102: </strong>All flow objects other than end events and compensating activities 
+            must have an outgoing sequence flow, if the process level includes any start or end events. (Sample 2.xpdl)
+        </li>
+        <li>
+            <strong>Style 0104: </strong>Two activities in the same process should not have the same name.  
+            (Use global activity to reuse a single activity in a process). (Sample 3.xpdl)
+        </li>
+        <li><strong>Style 0115: </strong>A throwing intermediate event should be labeled. (Sample 1.xpdl)</li>
+        <li><strong>Style 0122: </strong>A catching Message event should have incoming message flow. (Sample 4.xpdl)</li>
+        <li><strong>Style 0123: </strong>A throwing Message event should have outgoing message flow. (Sample 4.xpdl)</li>
+    </ul>
+    
+    
+    <input type="file" accept="text/xpdl"
+           onchange="angular.element(this).scope().file_changed(this)"/>
+    <!--<textarea cols="75" rows="15">{{ xpdlFile }}</textarea>-->
+    
+    <div ng-if='errors.bpmn0102.length > 0'>
+        <p><strong>Validacion  BPMN 0102</strong></p>
+        <p ng-repeat="act in errors.bpmn0102">{{act | json}}</p>
+    </div>
+    
+    <div ng-if='errors.style0104.length > 0'>
+        <p><strong>Validacion Style 0104</strong></p>
+        <p ng-repeat="act in errors.style0104">{{act | json}}</p>
+    </div>
+    
+    <div ng-if='errors.style0115.length > 0'>
+        <p><strong>Validacion Style 0115</strong></p>
+        <p ng-repeat="act in errors.style0115">{{act | json}}</p>
+    </div>
+    
+    <div ng-if='errors.bpmn0102.length == 0 && 
+                errors.style0104.length == 0 &&
+                errors.style0115.length == 0'>
+        <p><strong>BPM Valido!</strong></p>
+    </div>
+</div>

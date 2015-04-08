@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPM Validator</title>
+    
+    <!-- build:css ./_assets/combined.css -->
+    <link rel="stylesheet" type="text/css" href="./bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="./bpmv-app.css"/>
+    <!-- endbuild -->
+</head>
+
+<body ng-app="bpmvApp" class="bpmv-body" ng-class="{loading: isLoading}">
+    
+    <header class="container text-center">
+        <div class="page-header">
+            <h1>BPM Validator</h1>
+        </div>
+    </header>
+    
+    <div class="container text-center bpmv-view">
+        <div ng-view></div>
+    </div>
+    
+    <!-- build:js ./_assets/combined.js -->
+    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-animate/angular-animate.min.js"></script>
+    <script type="text/javascript" src="./bower_components/x2js/xml2json.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-x2js/src/x2js.js"></script>
+    <script type="text/javascript" src="./bpmv-library.js"></script>
+    <script type="text/javascript" src="./bpmv-nav.js"></script>
+    <script type="text/javascript" src="./bpmv-app-views.js"></script>
+    <script type="text/javascript" src="./home/home.js"></script>
+    <script type="text/javascript" src="./error/error.js"></script>
+    <script type="text/javascript" src="./bpmv-app.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

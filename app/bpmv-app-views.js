@@ -1,0 +1,1 @@
+var viewsModule = angular.module('bpmvAppViews', ['ngRoute', 'bpmvLibrary', 'bpmvNav', 'cb.x2js']);
